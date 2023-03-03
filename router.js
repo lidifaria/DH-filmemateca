@@ -1,15 +1,23 @@
 // Importando express
 const express = require('express');
-const PaginasController = require("./controllers/PaginasController")
-const FilmesController = require("./controllers/FilmesController")
+const PaginasController = require('./controllers/PaginasController');
+const FilmesController = require('./controllers/FilmesController');
 
 // Criando router
 const router = express.Router();
 
-// Definindo rotas. Quando temos apenas a barra, acessamos localhost:3000 (porta indicada no app.js)
-    router.get("/", PaginasController.index)
-    router.get("/filme/create", FilmesController.create)
+router.get('/', PaginasController.index);
+router.get('/filmes/create', FilmesController.create);
+router.get('/filmes/:id', PaginasController.showFilme);
+router.get('/busca', PaginasController.buscarFilmes);
+
+// Rota para exibir um formulário de edição de um filme
+// get '/adm/filmes/:id/edit' -> PaginasController.editFilme
+router.get('/adm/filmes/:id/edit' , PaginasController.editFilme);
+router.post('/adm/filmes/:id/update' , PaginasController.updateFilme);
+
+// Armazenando o filme
+router.post('/adm/filmes/store', FilmesController.store);
 
 // Exportando router
 module.exports = router;
-

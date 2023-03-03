@@ -1,8 +1,19 @@
+2023.03.03
+
+☐ criar rota (get /filmes/create) -> controller (create) ->  view (filme-create.ejs)
+. deve exibir um formulário de criação de um filme tal qual filme-edit.ejs
+
+☐ direcionar esse formulário via post para rota (filmes/store) -> controller (store) -> redirect para '/'
+
+
+*****
+
+
 ☐ OK - Configure uma rota get para '/'. Faça que essa rota encaminhe a requisição para o controller PaginasController.index
 
 ☐ OK - Faça que o controller PaginasController renderize a view index.ejs (atualmente nomeada de index.html)
 
-☐ Configure uma rota get para /filme/create e encaminhe essa requisição para FilmesController.create
+☐ OK - Configure uma rota get para /filme/create e encaminhe essa requisição para FilmesController.create
 
 ☐ Crie o controller FilmesController.create e faça com que esse controller retorne a view filme-create.ejs
 
@@ -23,3 +34,6 @@
 ☐ Altere a view filme.ejs para que ela mostra informações do filme escolhido
 
 ☐ Externalize a head para um arquivo head.ejs e utilize-o em todas as páginas
+
+
+

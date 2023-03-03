@@ -1,10 +1,21 @@
 const FilmesController = {
+    create: (req, res) => {
+        res.render('filme-create.ejs');
+    },
 
-//create, aqui, é uma "etiqueta" - assim como "index" está em PaginasController.js
+    store: (req,res) => {
 
-    create: (req,res)=> {
-        res.render("filme-create.ejs")
+    const novoFilme = {
+        titulo: req.body.titulo, 
+        genero: req.body.genero,
+        censura: req.body.censura,
+        sinopse: req.body.sinopse,
+        trailer: req.body.trailer,
+        cartaz: req.file.filename,
     }
+        res.redirect('index.ejs');
+    }
+
 }
 
-module.exports = FilmesController
+module.exports = FilmesController;
