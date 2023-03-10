@@ -10,8 +10,25 @@ const admController = {
         const usersAdmin = require('../database/usersAdmin.json');
 
         let admin = usersAdmin.find(admin => admin.email == email)
-        console.log(admin)
 
+        if (admin == undefined) {
+            res.send("E-mail não cadastrado")
+
+        }
+
+        // Autenticando a senha
+
+        if (admin.senha == senha) {
+            // res.send("Senhas conferem")
+            req.session.admin = admin.nome
+            console.log(req.session.admin)
+
+            res.redirect('/adm/filmes/create')
+        }
+
+        // Criar uma sessão 
+        // Instalar pacote express-session
+        // Realizar configurações no app.js
     }
 }
 

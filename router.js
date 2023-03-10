@@ -12,7 +12,7 @@ const admController = require('./controllers/admController');
 const router = express.Router();
 
 router.get('/', PaginasController.index);
-router.get('/filmes/create', FilmesController.create);
+router.get('/adm/filmes/create', FilmesController.create);
 router.get('/filmes/:id', PaginasController.showFilme);
 router.get('/busca', PaginasController.buscarFilmes);
 

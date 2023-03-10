@@ -1,6 +1,9 @@
 const FilmesController = {
     create: (req, res) => {
-        res.render('filme-create.ejs');
+        console.log(req.session.admin)
+        res.render('filme-create.ejs', {
+            userAdmin: req.session.admin
+        });
     },
 
     store: (req,res) => {
