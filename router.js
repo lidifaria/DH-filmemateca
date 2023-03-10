@@ -1,7 +1,12 @@
+//Importando o multer
+const multer = require('multer');
+const upload = multer({dest:'public.img.cartazes'});
+
 // Importando express
 const express = require('express');
 const PaginasController = require('./controllers/PaginasController');
 const FilmesController = require('./controllers/FilmesController');
+const admController = require('./controllers/admController');
 
 // Criando router
 const router = express.Router();
@@ -18,6 +23,10 @@ router.post('/adm/filmes/:id/update' , PaginasController.updateFilme);
 
 // Armazenando o filme
 router.post('/adm/filmes/store', FilmesController.store);
+
+// Login usuário admin
+router.get('/adm/login', admController.showLogin);
+router.post('/adm/login', admController.login);
 
 // Exportando router
 module.exports = router;

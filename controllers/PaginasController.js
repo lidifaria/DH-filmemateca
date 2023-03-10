@@ -1,11 +1,3 @@
-const fs = require('fs');
-const path = require('path');
-const uuid = require('uuid');
-
-//
-//const { v4: uuidv4 } = require('uuid');
-//sendo o campo v4 a função que gera o hash/caracteres aleatórios
-
 const PaginasController = {
     index: (req, res) => {
         // 1 - carregar os filmes de filmes.json
@@ -75,21 +67,6 @@ const PaginasController = {
     }
 }
 
-// Criar o objeto com o novo filme
-
-const filme ={
-    "id": uuid.v4(),
-    "cartaz": "fc0jsljdfl.jpg",
-    "titulo": req.body.titulo,
-    "generos": req.body.generos,
-    "censura": req.body.generos,
-    "trailer": req.body.trailer,
-    "sinopse": req.body.sinopse
-}
-
-const filmes = require('..database/filmes.json');
-const fs = require ('fs';
-filmes.push(filme);
-fs.writeFileSync(path.resolve(__dirname + '/../database/filmes.json'), JSON.stringify(filmes,null,4))
-
 module.exports = PaginasController;
+
+// atualizado em 2023.03.10
