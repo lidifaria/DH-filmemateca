@@ -1,3 +1,6 @@
+// Importar a conexão com o BD
+const { sequelize } = require('../database/models/index');
+
 const PaginasController = {
     index: (req, res) => {
         // 1 - carregar os filmes de filmes.json
